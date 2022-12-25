@@ -1,0 +1,61 @@
+﻿@using Online2.Systems;
+@model ResultService<MealBaseVM>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h1>Öğün Listesi</h1>
+@{
+	if (ViewData["ErrorMessage"] != null && ViewData["ErrorType"] != null)
+	{
+		string errorMessage = Model.ErrorItems.ToList()[0].ErrorMessage;
+		string errorType = Model.ErrorItems.ToList()[0].ErrorType;
+		<p class="text-danger">@errorType</p>
+		<p class="text-danger">@errorMessage</p>
+	}
+	if (TempData["Success"] != null)
+	{
+		<p>@TempData["Success"].ToString()</p>
+	}
+	else if (TempData["Errors"] != null)
+	{
+		<p>@TempData["Errors"].ToString()</p>
+	}
+}
+<p>
+	<a asp-action="Create">Yeni Öğün Oluştur</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Data.Id)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Data.MealName)
+			</th>
+			<th>
+				İşlemler
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.ListData)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Id)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.MealName)
+				</td>
+				<td>
+					@Html.ActionLink("Güncelle", "Update", new {  id=item.Id  }) |
+					@*@Html.ActionLink("Details", "Details", new {  /*id=item.PrimaryKey*/  }) |*@
+					@Html.ActionLink("Sil", "Delete", new {  id=item.Id  })
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

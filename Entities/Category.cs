@@ -11,9 +11,7 @@ namespace Entities
     {
         public string CategoryName { get; set; }
 
-
         public ICollection<Food> Foods { get; set; }
-
 
         public Category()
         {
