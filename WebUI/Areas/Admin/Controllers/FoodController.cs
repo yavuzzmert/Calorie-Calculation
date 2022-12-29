@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Online2.WebUI.Areas.Admin.Controllers
+namespace WebUI.Areas.Admin.Controllers
 {
     public class FoodController : Controller
     {

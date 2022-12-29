@@ -17,11 +17,4 @@
     <ProjectReference Include="..\BLL\BLL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="AdminForms\CategoryForm\" />
-    <Folder Include="AdminForms\FoodForm\" />
-    <Folder Include="AdminForms\MealForm\" />
-    <Folder Include="AdminForms\UserForm\" />
-  </ItemGroup>
-
 </Project>

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Systm;
 using ViewModels.CategoryViewModels;
 
-namespace Online2.WebUI.Areas.Admin.Controllers
+namespace WebUI.Areas.Admin.Controllers
 {
 	[Area("Admin")]
 	public class CategoryController : Controller
