@@ -56,6 +56,7 @@
             this.kullanıcıToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.kullanıcıToolStripMenuItem.Tag = "user";
             this.kullanıcıToolStripMenuItem.Text = "Kullanıcı";
+            this.kullanıcıToolStripMenuItem.Click += new System.EventHandler(this.Click);
             // 
             // kategoriToolStripMenuItem
             // 
@@ -63,6 +64,7 @@
             this.kategoriToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.kategoriToolStripMenuItem.Tag = "category";
             this.kategoriToolStripMenuItem.Text = "Kategori";
+            this.kategoriToolStripMenuItem.Click += new System.EventHandler(this.Click);
             // 
             // yemekToolStripMenuItem
             // 
@@ -70,6 +72,7 @@
             this.yemekToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.yemekToolStripMenuItem.Tag = "food";
             this.yemekToolStripMenuItem.Text = "Yemek";
+            this.yemekToolStripMenuItem.Click += new System.EventHandler(this.Click);
             // 
             // öğünToolStripMenuItem
             // 
@@ -77,6 +80,7 @@
             this.öğünToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.öğünToolStripMenuItem.Tag = "meal";
             this.öğünToolStripMenuItem.Text = "Öğün";
+            this.öğünToolStripMenuItem.Click += new System.EventHandler(this.Click);
             // 
             // AdminParent
             // 
