@@ -1,11 +1,10 @@
-﻿@using Online2.Systems;
-@model ResultService<MealBaseVM>
+﻿@model ResultService<MealBaseVM>
 
 @{
 	ViewData["Title"] = "Index";
 }
 
-<h1>Öğün Listesi</h1>
+<h1>Meal List</h1>
 @{
 	if (ViewData["ErrorMessage"] != null && ViewData["ErrorType"] != null)
 	{
@@ -24,7 +23,7 @@
 	}
 }
 <p>
-	<a asp-action="Create">Yeni Öğün Oluştur</a>
+	<a asp-action="Create">Create New</a>
 </p>
 <table class="table">
 	<thead>
@@ -51,9 +50,9 @@
 					@Html.DisplayFor(modelItem => item.MealName)
 				</td>
 				<td>
-					@Html.ActionLink("Güncelle", "Update", new {  id=item.Id  }) |
+					@Html.ActionLink("Edit", "Update", new {  id=item.Id  }) |
 					@*@Html.ActionLink("Details", "Details", new {  /*id=item.PrimaryKey*/  }) |*@
-					@Html.ActionLink("Sil", "Delete", new {  id=item.Id  })
+					@Html.ActionLink("Delete", "Delete", new {  id=item.Id  })
 				</td>
 			</tr>
 		}

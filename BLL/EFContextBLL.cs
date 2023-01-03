@@ -14,6 +14,7 @@ namespace BLL
             services.AddScoped<IUserBLL, UserService>();
             services.AddScoped<IMealBLL, MealService>();
             services.AddScoped<ICategoryBLL, CategoryService>();
+            services.AddScoped<IFoodBLL, FoodService>();
             
         }
     }
