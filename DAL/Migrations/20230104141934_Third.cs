@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Third : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -67,7 +67,7 @@ namespace DAL.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FoodName = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     Calorie = table.Column<double>(type: "float(2)", precision: 2, nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     CreateOn = table.Column<DateTime>(type: "datetime", nullable: false),
@@ -81,8 +81,7 @@ namespace DAL.Migrations
                         name: "FK_Foods_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "ID");
                 });
 
             migrationBuilder.CreateTable(
@@ -127,15 +126,15 @@ namespace DAL.Migrations
                 columns: new[] { "ID", "CategoryName", "CreateOn", "IsActive", "UpdateOn" },
                 values: new object[,]
                 {
-                    { 1, "Süt Grubu", new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(2784), true, null },
-                    { 2, "Et Grubu", new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(2788), true, null },
-                    { 3, "KuruBaklagil Grubu", new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(2789), true, null },
-                    { 4, "Ekmek Grubu", new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(2790), true, null },
-                    { 5, "Sebze Grubu", new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(2791), true, null },
-                    { 6, "Meyve Grubu", new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(2791), true, null },
-                    { 7, "Yağ Grubu", new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(2792), true, null },
-                    { 8, "Tatlı Grubu", new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(2793), true, null },
-                    { 9, "Kuruyemiş Grubu", new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(2794), true, null }
+                    { 1, "Süt Grubu", new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(192), true, null },
+                    { 2, "Et Grubu", new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(195), true, null },
+                    { 3, "KuruBaklagil Grubu", new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(196), true, null },
+                    { 4, "Ekmek Grubu", new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(197), true, null },
+                    { 5, "Sebze Grubu", new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(198), true, null },
+                    { 6, "Meyve Grubu", new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(199), true, null },
+                    { 7, "Yağ Grubu", new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(200), true, null },
+                    { 8, "Tatlı Grubu", new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(200), true, null },
+                    { 9, "Kuruyemiş Grubu", new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(201), true, null }
                 });
 
             migrationBuilder.InsertData(
@@ -143,30 +142,30 @@ namespace DAL.Migrations
                 columns: new[] { "ID", "CreateOn", "IsActive", "MealName", "UpdateOn" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(767), true, "Kahvaltı", null },
-                    { 2, new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(771), true, "Öğle Yemeği", null },
-                    { 3, new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(772), true, "Akşam Yemeği", null }
+                    { 1, new DateTime(2023, 1, 4, 17, 19, 33, 920, DateTimeKind.Local).AddTicks(8147), true, "Kahvaltı", null },
+                    { 2, new DateTime(2023, 1, 4, 17, 19, 33, 920, DateTimeKind.Local).AddTicks(8151), true, "Öğle Yemeği", null },
+                    { 3, new DateTime(2023, 1, 4, 17, 19, 33, 920, DateTimeKind.Local).AddTicks(8152), true, "Akşam Yemeği", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "ID", "CreateOn", "Email", "IsActive", "Password", "UpdateOn", "UserName", "UserTypes" },
-                values: new object[] { 1, new DateTime(2022, 12, 24, 17, 46, 56, 406, DateTimeKind.Local).AddTicks(8684), "admin@gmail.com", true, "123456", null, "Admin", "Admin" });
+                values: new object[] { 1, new DateTime(2023, 1, 4, 17, 19, 33, 920, DateTimeKind.Local).AddTicks(6138), "admin@gmail.com", true, "123456", null, "Admin", "Admin" });
 
             migrationBuilder.InsertData(
                 table: "Foods",
                 columns: new[] { "ID", "Calorie", "CategoryId", "CreateOn", "Description", "FoodName", "IsActive", "UpdateOn" },
                 values: new object[,]
                 {
-                    { 1, 11400.0, 1, new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(5263), "1 su bardağı, 200ml", "Süt", true, null },
-                    { 2, 69000.0, 2, new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(5267), "1 köfte, 30gr", "Kıyma", true, null },
-                    { 3, 80000.0, 3, new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(5268), "4 yemek kaşığı, 25gr", "Mercimek", true, null },
-                    { 4, 68000.0, 4, new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(5269), "3 yemek kaşığı, 50gr", "Makarna", true, null },
-                    { 5, 25000.0, 5, new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(5270), "4 yemek kaşığı, 200gr", "Brokoli(pişmiş)", true, null },
-                    { 6, 60000.0, 6, new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(5271), "1 küçük boy, 120gr", "Elma", true, null },
-                    { 7, 45000.0, 7, new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(5272), "1 tatlı kaşığı, 5gr", "Tereyağ", true, null },
-                    { 8, 68000.0, 8, new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(5273), "1 yemek kaşığı, 30gr", "Bal", true, null },
-                    { 9, 45000.0, 9, new DateTime(2022, 12, 24, 17, 46, 56, 407, DateTimeKind.Local).AddTicks(5274), "2 adet, 8gr", "Ceviz içi", true, null }
+                    { 1, 11400.0, 1, new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(2509), "1 su bardağı, 200ml", "Süt", true, null },
+                    { 2, 69000.0, 2, new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(2513), "1 köfte, 30gr", "Kıyma", true, null },
+                    { 3, 80000.0, 3, new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(2514), "4 yemek kaşığı, 25gr", "Mercimek", true, null },
+                    { 4, 68000.0, 4, new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(2515), "3 yemek kaşığı, 50gr", "Makarna", true, null },
+                    { 5, 25000.0, 5, new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(2516), "4 yemek kaşığı, 200gr", "Brokoli(pişmiş)", true, null },
+                    { 6, 60000.0, 6, new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(2517), "1 küçük boy, 120gr", "Elma", true, null },
+                    { 7, 45000.0, 7, new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(2518), "1 tatlı kaşığı, 5gr", "Tereyağ", true, null },
+                    { 8, 68000.0, 8, new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(2519), "1 yemek kaşığı, 30gr", "Bal", true, null },
+                    { 9, 45000.0, 9, new DateTime(2023, 1, 4, 17, 19, 33, 921, DateTimeKind.Local).AddTicks(2519), "2 adet, 8gr", "Ceviz içi", true, null }
                 });
 
             migrationBuilder.CreateIndex(

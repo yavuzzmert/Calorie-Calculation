@@ -23,17 +23,17 @@ namespace DAL.Concrete.Context.Configurations
                     .IsUnique();
 
             builder.Property(x => x.Description)
-                    .IsRequired()
+                    .IsRequired(false)
                     .HasMaxLength(200);
 
             builder.Property(x => x.Calorie)
                     .IsRequired()
-                    .HasPrecision(2); //
+                    .HasPrecision(2); 
 
             builder.HasOne(x => x.Category)
                     .WithMany(x => x.Foods)
                     .HasForeignKey(x => x.CategoryId)
-                    .OnDelete(DeleteBehavior.Restrict);
+                    .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasMany(x => x.MealFoods)
                     .WithOne(x => x.Food)
