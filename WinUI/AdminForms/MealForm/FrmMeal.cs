@@ -95,7 +95,8 @@ namespace WinUI.AdminForms.MealForm
             {
                 MealBaseVM @base = new MealBaseVM()
                 {
-                    Id = result.Data.Id
+                    Id = result.Data.Id,
+                    MealName = result.Data.MealName,
                 };
                 ResultService<MealBaseVM> baseResult = _mealBLL.DeleteMeal(@base.Id);
                 if (baseResult.HasError)
